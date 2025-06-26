@@ -48,7 +48,10 @@ const App = () => {
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
         <Route path='/feed/:number' element={<OrderInfo />} />
-        <Route path='/ingredients/:id' element={<IngredientDetails />} />
+        <Route
+          path='/ingredients/:id'
+          element={<IngredientDetails isModal={false} />}
+        />
         <Route
           path='/login'
           element={
@@ -113,8 +116,8 @@ const App = () => {
           <Route
             path='/feed/:number'
             element={
-              <Modal title={'Информация о заказе'} onClose={() => navigate(-1)}>
-                <OrderInfo />
+              <Modal title={''} onClose={() => navigate(-1)}>
+                <OrderInfo isModal />
               </Modal>
             }
           />
@@ -122,15 +125,15 @@ const App = () => {
             path='/ingredients/:id'
             element={
               <Modal title={'Детали ингредиента'} onClose={() => navigate(-1)}>
-                <IngredientDetails />
+                <IngredientDetails isModal />
               </Modal>
             }
           />
           <Route
             path='/profile/orders/:number'
             element={
-              <Modal title={'Информация о заказе'} onClose={() => navigate(-1)}>
-                <OrderInfo />
+              <Modal title={''} onClose={() => navigate(-1)}>
+                <OrderInfo isModal />
               </Modal>
             }
           />

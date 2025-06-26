@@ -14,6 +14,8 @@ import {
   updateUserApi
 } from '../../utils/burger-api';
 import { deleteCookie, setCookie } from '../../utils/cookie';
+import { clearOrder } from './orderSlice';
+import { clearBurgerConstructor } from './constructorSlice';
 
 export const loginUserThunk = createAsyncThunk(
   'users/loginUser',
@@ -25,11 +27,16 @@ export const loginUserThunk = createAsyncThunk(
     })
 );
 
-export const logoutUserThunk = createAsyncThunk('users/logoutUser', async () =>
-  logoutApi().then(() => {
+export const logoutUserThunk = createAsyncThunk(
+  'users/logoutUser',
+  async (_, { dispatch }) => {
+    await logoutApi();
     deleteCookie('accessToken');
     localStorage.removeItem('refreshToken');
-  })
+
+    dispatch(clearOrder());
+    dispatch(clearBurgerConstructor());
+  }
 );
 
 export const getUserThunk = createAsyncThunk('users/getUser', async () =>

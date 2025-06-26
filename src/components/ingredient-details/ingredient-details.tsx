@@ -5,7 +5,11 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from '../../services/store';
 import { ingredientsSelector } from '../../services/slices/ingredientsSlice';
 
-export const IngredientDetails: FC = () => {
+interface IngredientDetailsProps {
+  isModal?: boolean;
+}
+
+export const IngredientDetails: FC<IngredientDetailsProps> = ({ isModal }) => {
   /** TODO: взять переменную из стора */
   const { id } = useParams();
   const ingredients = useSelector(ingredientsSelector);
@@ -17,5 +21,7 @@ export const IngredientDetails: FC = () => {
     return <Preloader />;
   }
 
-  return <IngredientDetailsUI ingredientData={ingredientData} />;
+  return (
+    <IngredientDetailsUI ingredientData={ingredientData} isModal={isModal} />
+  );
 };

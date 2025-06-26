@@ -11,7 +11,7 @@ import {
   isOrderLoadingSelector,
   orderSelector
 } from '../../services/slices/orderSlice';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { isAuthCheckedSelector } from '../../services/slices/authSlice';
 import { orderBurgerThunk } from '../../services/slices/orderSlice';
 
@@ -23,12 +23,14 @@ export const BurgerConstructor: FC = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const isAuthenticated = useSelector(isAuthCheckedSelector);
 
   const onOrderClick = () => {
     if (!isAuthenticated) {
-      navigate('/login');
+      navigate('/login', { state: { from: location } });
+      return;
     }
 
     const { bun, ingredients } = constructorItems;
@@ -38,13 +40,16 @@ export const BurgerConstructor: FC = () => {
       ...ingredients.map((ingredient) => ingredient._id),
       bun?._id!
     ];
-    dispatch(orderBurgerThunk(orderData));
+    dispatch(orderBurgerThunk(orderData))
+      .unwrap()
+      .then(() => {
+        dispatch(clearBurgerConstructor());
+      });
   };
 
   const closeOrderModal = () => {
     navigate('/', { replace: true });
     dispatch(clearOrder());
-    dispatch(clearBurgerConstructor());
   };
 
   const price = useMemo(

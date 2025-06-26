@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from '../../services/store';
 import {
   clearErrors,
   errorSelector,
-  loginUserThunk
+  loginUserThunk,
+  isAuthCheckedSelector
 } from '../../services/slices/authSlice';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
@@ -15,16 +16,22 @@ export const Login: FC = () => {
   const dispatch = useDispatch();
   const error = useSelector(errorSelector);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isAuthChecked = useSelector(isAuthCheckedSelector);
 
-  const handleSubmit = (e: SyntheticEvent) => {
+  const from = location.state?.from?.pathname || '/';
+
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(loginUserThunk({ email, password }));
-    navigate('/');
+    const resultAction = await dispatch(loginUserThunk({ email, password }));
+    if (loginUserThunk.fulfilled.match(resultAction)) {
+      navigate(from, { replace: true });
+    }
   };
 
   useEffect(() => {
     dispatch(clearErrors());
-  }, []);
+  }, [dispatch]);
 
   return (
     <LoginUI

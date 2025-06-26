@@ -9,7 +9,7 @@ import { orderSelector } from '../../services/slices/feedSlice';
 import { ingredientsSelector } from '../../services/slices/ingredientsSlice';
 import { getOrderByNumberThunk } from '../../services/slices/feedSlice';
 
-export const OrderInfo: FC = () => {
+export const OrderInfo: FC<{ isModal?: boolean }> = ({ isModal }) => {
   const dispatch = useDispatch();
   const { number } = useParams();
 
@@ -66,5 +66,5 @@ export const OrderInfo: FC = () => {
     return <Preloader />;
   }
 
-  return <OrderInfoUI orderInfo={orderInfo} />;
+  return <OrderInfoUI orderInfo={orderInfo} isModal={isModal} />;
 };
