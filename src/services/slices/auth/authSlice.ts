@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { TOrder, TUser } from '../../utils/types';
+import { TOrder, TUser } from '../../../utils/types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import {
@@ -12,10 +12,10 @@ import {
   logoutApi,
   registerUserApi,
   updateUserApi
-} from '../../utils/burger-api';
-import { deleteCookie, setCookie } from '../../utils/cookie';
-import { clearOrder } from './orderSlice';
-import { clearBurgerConstructor } from './constructorSlice';
+} from '../../../utils/burger-api';
+import { deleteCookie, setCookie } from '../../../utils/cookie';
+import { clearOrder } from '../order/orderSlice';
+import { clearBurgerConstructor } from '../constructor/constructorSlice';
 
 export const loginUserThunk = createAsyncThunk(
   'users/loginUser',

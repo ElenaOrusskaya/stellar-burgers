@@ -24,8 +24,8 @@ import {
 
 import { useEffect } from 'react';
 import { useDispatch } from '../../services/store';
-import { getIngredientsThunk } from '../../services/slices/ingredientsSlice';
-import { getUserThunk } from '../../services/slices/authSlice';
+import { getIngredientsThunk } from '../../services/slices/ingredients/ingredientsSlice';
+import { getUserThunk } from '../../services/slices/auth/authSlice';
 
 const App = () => {
   const dispatch = useDispatch();

@@ -5,9 +5,9 @@ import { TIngredient } from '@utils-types';
 import { useSelector, useDispatch } from '../../services/store';
 import { useParams } from 'react-router-dom';
 
-import { orderSelector } from '../../services/slices/feedSlice';
-import { ingredientsSelector } from '../../services/slices/ingredientsSlice';
-import { getOrderByNumberThunk } from '../../services/slices/feedSlice';
+import { orderSelector } from '../../services/slices/feed/feedSlice';
+import { ingredientsSelector } from '../../services/slices/ingredients/ingredientsSlice';
+import { getOrderByNumberThunk } from '../../services/slices/feed/feedSlice';
 
 export const OrderInfo: FC<{ isModal?: boolean }> = ({ isModal }) => {
   const dispatch = useDispatch();
