@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { TConstructorIngredient, TIngredient } from '../../utils/types';
+import { TConstructorIngredient, TIngredient } from '../../../utils/types';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface burgerConstructorState {
