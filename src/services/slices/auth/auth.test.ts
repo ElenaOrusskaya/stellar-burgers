@@ -1,19 +1,12 @@
 import userReducer, {
   clearErrors,
   getOrdersThunk,
-  UserState
+  UserState,
+  initialState
 } from './authSlice';
 import { userOrders } from '../../../testData';
 
 describe('authSlice / userSlice', () => {
-  const initialState: UserState = {
-    isAuthenticated: false,
-    loginUserRequest: false,
-    user: null,
-    orders: [],
-    ordersRequest: false,
-    error: null
-  };
 
   test('clearErrors должен сбросить поле error', () => {
     const prevState: UserState = {

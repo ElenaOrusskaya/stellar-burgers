@@ -199,4 +199,6 @@ export const {
   errorSelector
 } = userSlice.selectors;
 
+export { initialState };
+
 export default userSlice.reducer;

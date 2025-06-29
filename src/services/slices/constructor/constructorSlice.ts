@@ -72,4 +72,7 @@ export const {
   removeIngredient,
   clearBurgerConstructor
 } = burgerConstructorSlice.actions;
+
+export { initialState };
+
 export default burgerConstructorSlice.reducer;

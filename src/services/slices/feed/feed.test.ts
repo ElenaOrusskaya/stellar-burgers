@@ -1,21 +1,13 @@
 import feedReducer, {
   FeedState,
   getFeedsThunk,
-  getOrderByNumberThunk
+  getOrderByNumberThunk,
+  initialState
 } from './feedSlice';
 import { userOrders } from '../../../testData';
 import { TFeedsResponse, TOrderResponse } from '../../../utils/burger-api';
 
 describe('feedSlice', () => {
-  const initialState: FeedState = {
-    orders: [],
-    isFeedsLoading: false,
-    order: null,
-    isOrderLoading: false,
-    total: 0,
-    totalToday: 0,
-    error: null
-  };
 
   describe('getFeedsThunk', () => {
     test('pending: isFeedsLoading становится true', () => {

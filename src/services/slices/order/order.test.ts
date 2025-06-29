@@ -1,17 +1,12 @@
 import orderReducer, {
   clearOrder,
   orderBurgerThunk,
-  OrderState
+  OrderState, initialState
 } from './orderSlice';
 import { order } from '../../../testData';
 import { TNewOrderResponse } from '../../../utils/burger-api';
 
 describe('orderSlice', () => {
-  const initialState: OrderState = {
-    order: null,
-    isOrderLoading: false,
-    error: null
-  };
 
   test('очистка заказа (clearOrder)', () => {
     const prevState: OrderState = {

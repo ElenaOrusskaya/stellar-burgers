@@ -1,13 +1,8 @@
 import ingredientsReducer, { getIngredientsThunk } from './ingredientsSlice';
-import { IngredientsState } from './ingredientsSlice';
+import { IngredientsState, initialState } from './ingredientsSlice';
 import { buns } from '../../../testData';
 
 describe('ingredientsSlice', () => {
-  const initialState: IngredientsState = {
-    ingredients: [],
-    isIngredientsLoading: false,
-    error: null
-  };
 
   test('должен установить isIngredientsLoading: true при pending', () => {
     const nextState = ingredientsReducer(

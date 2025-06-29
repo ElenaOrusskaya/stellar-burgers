@@ -4,20 +4,14 @@ import reducer, {
   removeIngredient,
   upIngredient,
   downIngredient,
-  clearBurgerConstructor
+  clearBurgerConstructor,
+  initialState
 } from './constructorSlice';
 import { buns, notBuns } from '../../../testData';
 
 jest.mock('uuid');
 
 describe('constructorSlice', () => {
-  const initialState = {
-    burgerConstructor: {
-      bun: null,
-      ingredients: []
-    },
-    error: null
-  };
 
   const filledState = {
     burgerConstructor: {
