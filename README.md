@@ -1,98 +1,103 @@
 # Stellar Burgers  
-React • TypeScript • Redux Toolkit • Router • Authorization • Webpack • Storybook • REST API
+React • TypeScript • Redux Toolkit • React Router • Authorization • Webpack • Storybook • REST API
 
-**Stellar Burgers** — одностраничное приложение (SPA) для сборки космических бургеров.  
-Пользователь может авторизоваться, просматривать ингредиенты, открывать детали ингредиентов в модальных окнах, собирать заказ и оформлять его.  
-Проект выполнен на **React + TypeScript**, со **стейт-менеджментом на Redux Toolkit** и модульной архитектурой.
-
----
-
-## ✨ Основной функционал
-
-- загрузка ингредиентов с сервера (REST API);
-- просмотр деталей ингредиента в модальном окне;
-- сборка бургера;
-- оформление заказа;
-- регистрация, авторизация, восстановление пароля;
-- хранение токена и автоматическая проверка авторизации;
-- защищённые маршруты (доступен только при входе);
-- редактирование данных пользователя;
-- маршрутизация через **React Router v6**;
-- UI-компоненты с примером использования в **Storybook**;
-- типизация всего приложения с помощью **TypeScript**.
+**Stellar Burgers** is a single-page React application (SPA) for building cosmic burgers.  
+Users can sign up, log in, browse ingredients, view ingredient details in modal windows, assemble a burger, and place an order.  
+The project is built with **React + TypeScript**, uses **Redux Toolkit** for state management, and follows a modular architecture.
 
 ---
 
-## 🛠 Используемые технологии
+## ✨ Key Features
+
+- Load ingredients from a server (REST API)  
+- View ingredient details in a modal  
+- Build a custom burger  
+- Submit an order  
+- User registration, login, and password recovery  
+- Token storage with automatic authorization check  
+- Protected routes (only accessible for authenticated users)  
+- Edit user profile data  
+- Routing implemented with **React Router v6**  
+- UI components documented and previewed with **Storybook**  
+- Full TypeScript coverage across the application  
+
+---
+
+## 🛠 Technologies Used
 
 ### **Frontend**
-- **React** (функциональные компоненты, хуки)
+- **React** (functional components, hooks)
 - **TypeScript**
 - **Redux Toolkit** (slices, async thunks)
 - **React Router**
-- **CSS Modules / обычный CSS**
-- **Модальные окна**
-- **Storybook** (документация и предпросмотр компонентов)
+- **CSS Modules / plain CSS**
+- **Modals**
+- **Storybook** (component documentation & preview)
 
-### **Инструменты и инфраструктура**
-- **Webpack** (сборка проекта)
+### **Tooling & Infrastructure**
+- **Webpack** (project bundling)
 - **Babel**
 - **ESLint + Prettier**
-- **.env конфигурация**
+- **Environment variables (.env)**
 - **Git / GitHub**
 
 ### **API**
 - REST API  
 - Fetch + async/await  
-- Переменная окружения `BURGER_API_URL`  
+- Environment variable: `BURGER_API_URL`  
 
 ---
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
+## 📁 Project Structure
+
+```
 src/
-components/ # UI-компоненты
-pages/ # страницы (роуты)
-services/ # Redux Toolkit store, slices, thunks
-utils/ # функции и burger-api.ts
-stories/ # Storybook stories
-images/ # изображения
-index.tsx # точка входа
-index.css # стили
-
+  components/      # UI components
+  pages/           # routes
+  services/        # Redux store, slices
+  utils/           # helpers, api
+  stories/         # Storybook
+  images/
+  index.tsx
+  index.css
+```
 
 ---
 
-## 🔧 Настройка API
+## 🔧 API Configuration
 
-Создайте файл `.env`:
-
+Create a `.env` file with:
+```
 BURGER_API_URL=https://norma.education-services.ru/api
+```
 
 
 ---
 
-## ▶️ Как запустить проект
+## ▶️ Running the Project
 
+Installation:
+
+```
 npm install
+```
+
+Start the development server:
+
+```
 npm start
+```
 
+Build for production:
 
-Сборка приложения:
-
+```
 npm run build
+```
 
+Run Storybook:
 
-Запуск Storybook:
-
+```
 npm run storybook
-
-
----
-
-## 👩‍💻 Автор
-
-**Elena Orusskaya**  
-GitHub: https://github.com/ElenaOrusskaya  
-Telegram: https://t.me/lenya_o
-
+```
