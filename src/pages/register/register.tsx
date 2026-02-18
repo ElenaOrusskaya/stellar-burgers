@@ -5,7 +5,7 @@ import {
   clearErrors,
   errorSelector,
   registerUserThunk
-} from '../../services/slices/authSlice';
+} from '../../services/slices/auth/authSlice';
 
 export const Register: FC = () => {
   const dispatch = useDispatch();

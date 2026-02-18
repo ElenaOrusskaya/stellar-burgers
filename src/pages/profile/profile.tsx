@@ -5,7 +5,7 @@ import {
   errorSelector,
   userSelector,
   updateUserThunk
-} from '../../services/slices/authSlice';
+} from '../../services/slices/auth/authSlice';
 
 export const Profile: FC = () => {
   const dispatch = useDispatch();

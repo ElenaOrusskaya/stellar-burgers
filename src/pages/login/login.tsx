@@ -6,7 +6,7 @@ import {
   errorSelector,
   loginUserThunk,
   isAuthCheckedSelector
-} from '../../services/slices/authSlice';
+} from '../../services/slices/auth/authSlice';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Login: FC = () => {

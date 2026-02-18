@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from '../../services/store';
 import {
   userOrdersSelector,
   getOrdersThunk
-} from '../../services/slices/authSlice';
+} from '../../services/slices/auth/authSlice';
 
 export const ProfileOrders: FC = () => {
   const dispatch = useDispatch();

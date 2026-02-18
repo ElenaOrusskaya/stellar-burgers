@@ -4,7 +4,7 @@ import { Preloader } from '../ui/preloader';
 import {
   isAuthCheckedSelector,
   loginUserRequestSelector
-} from '../../services/slices/authSlice';
+} from '../../services/slices/auth/authSlice';
 
 type ProtectedRouteProps = {
   onlyUnAuth?: boolean;
